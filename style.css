@@ -1,0 +1,29 @@
+body {
+    /* Changing body color */
+    text-align: center;
+    background-color: rgb(252, 223, 95);
+  }
+h1 {
+    background-color: pink;
+    /* Font Styling for all h1 Tags */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+p {
+    text-align: center;
+    border: 2px solid powderblue;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    border-color: black;
+    color: red;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+  }
