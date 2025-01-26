@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <header>
@@ -71,10 +70,7 @@
             <input id="phonenumber" name="phonenumber" type="tel" required><br><br>
 
             <h1>Geolocation</h1>
-            <p>Click the button to get your coordinates and view them on the map.</p>
-            <button onclick="getLocation()">Try It</button>
-            <p id="demo" name="demo"></p>
-            <div id="map" name="map"></div>
+            <p id="location" name="location"></p>
             <br>
             <button>Submit</button>
         </section>
@@ -84,7 +80,6 @@
         <p>2025 Demo Project. All rights reserved.</p>
     </footer>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
