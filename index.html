@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>This is a web title</title>
 </head>
 <body>
-    <h1>My First Webpage</h1>
-    <p>I coded this page in the lab1 of Web Programming</p>
-    <label for="hobbies">Hobbies</label>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <h2>Movies</h2>
+            <ul>
+                <li>Interstellar</li>
+                <li>Avengers: Endgame</li>
+                <li>Titanic</li>
+            </ul>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E?si=cYEOW0wKGMHx6mNW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br>
+            <audio id="audio" name="audio" controls>
+                <source id="audioSource" name="audioSource" src="resources/videoplayback (1).mp3" type="audio/mpeg" />
+            </audio>
+            <br>
+            <button id="prevButton" name="prevButton" onclick="playBack()">Prev</button>
+            <button id="nextButton" name="nextButton" onclick="playNext()">Next</button>
+            </section>
+      
+          <section id="services">
+            <h2>Skills</h2>
+            <ul>
+              <li>Web Development</li>
+              <li>UI/UX Design</li>
+              <li>Programming</li>
+            </ul>
+          </section>
+        <section id="contact">
+        <h2>Contact Us</h2>
+        <label for="name">Name:</label>
+        <input id="name" name="name" value="" type="text" required><br><br>
+        <label for="email">Email:</label>
+        <input id="email" name="email" value="" type="email" required><br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        <label for="phonenumber">Phone number:</label>
+        <input id="phonenumber" name="phonenumber" value="" type="tel" required><br><br>
+        <button>Submit</button>
+        </section>
+    </main>
+    <footer>
+        <p>2025 Demo Project. All rights reserved.</p>
+    </footer>
 
-    <!-- List of Hobbies -->
-    <ul id="hobbies">
-        <li>Sleeping</li>
-        <li>Eating</li>
-        <li>Nothing</li>
-    </ul>
-
-    <!-- Image is stored in resources folder -->
-    <input type="image" src="resources/image.jpg" alt="No Image because of LOW BUDGET" width="200" height="200"><br>
-    <a href="https://classroom.google.com/">Google Classroom</a>
+    <script src="script.js"></script>
 </body>
 </html>
