@@ -26,3 +26,24 @@ function showPosition(position) {
     const x = document.getElementById("location");
     x.innerHTML = `Latitude: ${lat}<br>Longitude: ${lng}`;
 }
+
+function addNewTask() {
+    let todolist = document.getElementById("todolist");
+    let newNode = document.createElement('li');
+    let taskName = document.getElementById("todolistName").value;
+    let recycleBinImage = document.createElement('input');
+    recycleBinImage.type = "image"
+    recycleBinImage.src = ".././resources/recycle-bin.png";
+    recycleBinImage.height = 20;
+    recycleBinImage.width = 20;
+    recycleBinImage.onclick = function() {deleteElement(newNode)};
+    newNode.appendChild(document.createTextNode(taskName));
+    newNode.appendChild(recycleBinImage)
+
+    todolist.appendChild(newNode);
+}
+
+function deleteElement(newNode) {
+    let todolist = document.getElementById("todolist");
+    todolist.removeChild(newNode)
+}
