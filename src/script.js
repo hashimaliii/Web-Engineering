@@ -32,6 +32,10 @@ function addNewTask() {
     let newNode = document.createElement('li');
     let taskName = document.getElementById("todolistName").value;
     let recycleBinImage = document.createElement('input');
+    if(taskName.length <= 0){
+        alert("Error: Invalid Task Name")
+        return;
+    }
     recycleBinImage.type = "image"
     recycleBinImage.src = ".././resources/recycle-bin.png";
     recycleBinImage.height = 20;
