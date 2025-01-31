@@ -53,8 +53,8 @@ function deleteElement(newNode) {
 }
 
 // let fruits = ['Apple', 'Banana', 'Orange']
-let fruits = new Array("Apple", "Banana", "Orange");
-console.log(fruits)
+// let fruits = new Array("Apple", "Banana", "Orange");
+// console.log(fruits)
 // fruits.splice(1,1,'Apple')
 
 // fruits.slice()
@@ -77,7 +77,7 @@ console.log(fruits)
 // let values = [1,2,5,8,9]
 // console.log(values.reduce((acc, val,)=> val > acc ? acc = val : acc, values[0]))
 
-let values = [[1,2,5,8,9],[9,10]];
+// let values = [[1,2,5,8,9],[9,10]];
 // console.log(values.reduce((acc, val)=> acc.concat(val), []))
 
 // let valueSet = [1,3,5,1];
@@ -94,5 +94,31 @@ let values = [[1,2,5,8,9],[9,10]];
 // displayMessage = displayMessage.replace('H', 'a')
 // console.log(displayMessage)
 
-let result = values.join()
-console.log(result)
+// let values = [[1,2,5,8,9],[9,10]];
+// let result = values.join()
+// console.log(result)
+
+let person = {
+    name: 'Hashim',
+    age : 25,
+    isStudent : true,
+    registeredCourses:{
+        subject1: 'PF',
+        subject2: 'OOP',
+    }
+};
+
+console.log(person)
+console.log(person.name)
+console.log(person['name'])
+delete person['name']
+console.log(person['registeredCourses']['subject1'])
+
+// let person1 = new Object();
+// person1.name = 'Talha'
+// person1.isStudent = true
+// console.log(person1)
+
+// let person2 = Object.create(null);
+// person2.name = 'Yousaf'
+// console.log(person2)
