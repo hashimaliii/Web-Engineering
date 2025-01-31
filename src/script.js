@@ -98,21 +98,68 @@ function deleteElement(newNode) {
 // let result = values.join()
 // console.log(result)
 
-let person = {
-    name: 'Hashim',
-    age : 25,
-    isStudent : true,
-    registeredCourses:{
-        subject1: 'PF',
-        subject2: 'OOP',
-    }
-};
+// let person = {
+//     name: 'Hashim',
+//     age: 25,
+//     isStudent: true,
+//     registeredCourses: {
+//         course1: {
+//             title: 'PF',
+//             isPassed: true
+//         },
+//         course2: {
+//             title: 'OOP',
+//             isPassed: true
+//         }
+//     },
+//     displayName: function () {
+//         return this.name
+//     }
+// };
 
-console.log(person)
-console.log(person.name)
-console.log(person['name'])
-delete person['name']
-console.log(person['registeredCourses']['subject1'])
+// let course3 = {
+//     title: 'Web',
+//     isPassed: true
+// }
+// person['registeredCourses']['course3'] = course3
+// person.Prototype.semesterStart = true
+// person.Prototype.greet = function(){
+//     return `Hello ${this.name}`
+// }
+
+// console.log(person.Prototype)
+// console.log(person)
+// console.log(person.displayName())
+// console.log(person.name)
+// console.log(person['name'])
+// delete person['name']
+// console.log(person['registeredCourses']['course1']['title'])
+
+// console.log(Object.keys(person))
+// console.log(Object.values(person))
+// for (key in person){
+//     console.log(person[key]);
+// }
+
+// let {name, isStudent} = person
+// console.log(name, isStudent)
+
+// let currentStudent = {... person}
+// console.log(currentStudent)
+// function add(...val){
+//     return 1;
+// }
+
+// function createPerson(name,isStudent){
+//     this.name = name;
+//     this.isStudent = isStudent;
+// }
+
+// let person3 = new createPerson('Hashim', true)
+// console.log(person3)
+
+// Object.freeze(person)
+// Object.seal(person)
 
 // let person1 = new Object();
 // person1.name = 'Talha'
@@ -122,3 +169,7 @@ console.log(person['registeredCourses']['subject1'])
 // let person2 = Object.create(null);
 // person2.name = 'Yousaf'
 // console.log(person2)
+
+// Task
+// Page Display
+// Student Names[checkboxes][edit,view] Offered Courses [List]
