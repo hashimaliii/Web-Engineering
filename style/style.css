@@ -1,59 +1,183 @@
+/* Reset some default styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    /* Soft gradient background */
 }
 
-#todolistSection {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Container for the lists */
+.container {
+    display: flex;
+    justify-content: space-around;
+    /* Space between the lists */
+    padding: 40px;
+    max-width: 1200px;
+    /* Max width for larger screens */
+    margin: auto;
+    /* Center the container */
 }
 
-label {
-    font-weight: bold;
-}
-
-input {
-    padding: 5px;
-    margin: 10px 0;
-    border: px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 8px 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
+/* Styling for the ordered lists */
 ol {
-    padding: 0;
-    text-align: left;
-    margin-top: 20px;
+    list-style-type: decimal;
+    /* Default numbering */
+    padding: 20px;
+    background-color: #ffffff;
+    /* White background for lists */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadow */
+    width: 45%;
+    /* Width of each list */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Smooth transition for hover effect */
+    overflow: hidden;
+    /* Prevent overflow */
+    list-style-position: inside;
+    /* Ensure numbers are inside the box */
+    display: flex;
+    /* Use flexbox for equal height */
+    flex-direction: column;
+    /* Stack items vertically */
 }
 
-ol li {
-    background: #ddd;
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
+/* Hover effect for lists */
+ol:hover {
+    transform: translateY(-5px);
+    /* Slightly lift on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow on hover */
 }
 
+/* Styling for list items */
+li {
+    margin: 10px 0;
+    /* Space between list items */
+    padding: 15px;
+    /* Padding inside list items */
+    border-bottom: 1px solid #e0e0e0;
+    /* Divider line */
+    font-size: 1.1em;
+    /* Slightly larger font size */
+    color: #333;
+    /* Darker text color */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effect */
+    word-wrap: break-word;
+    /* Ensure long words break to fit */
+}
+
+/* Hover effect for list items */
+li:hover {
+    background-color: #e9f5ff;
+    /* Light blue background on hover */
+    transform: scale(1.02);
+    /* Slightly enlarge on hover */
+}
+
+/* Last list item without bottom border */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    /* Text color */
+    border: none;
+    /* Remove default border */
+    border-radius: 25px;
+    /* Round corners */
+    padding: 10px 20px;
+    /* Padding for button */
+    font-size: 1em;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition */
+    display: inline-block;
+    /* Ensure proper spacing */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+/* Text field styling */
+input[type="text"],
+input[type="email"],
+textarea {
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 25px;
+    /* Round corners */
+    padding: 10px;
+    /* Padding inside text fields */
+    width: 100%;
+    /* Full width */
+    max-width: 300px;
+    /* Max width for text fields */
+    margin: 10px 0;
+    /* Space around text fields */
+    font-size: 1em;
+    /* Font size */
+    box-sizing: border-box;
+    /* Include padding in width */
+}
+
+/* Footer styling */
 footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
+    text-align: center;
+    /* Center align footer text */
+    padding: 20px;
+    /* Padding for footer */
+    background-color: #ffffff;
+    /* White background for footer */
+    border-top: 1px solid #e0e0e0;
+    /* Top border */
+    position: relative;
+    /* Positioning for footer */
+    bottom: 0;
+    /* Stick to bottom */
+    width: 100%;
+    /* Full width */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stack lists on smaller screens */
+        align-items: center;
+        /* Center align */
+    }
+
+    ol {
+        width: 80%;
+        /* Adjust width for smaller screens */
+        margin-bottom: 20px;
+        /* Space between stacked lists */
+    }
+}
+
+/* Additional styling for headings (if needed) */
+h1,
+h2,
+h3 {
+    margin: 20px 0;
+    /* Space around headings */
+    color: #333;
+    /* Darker text color for headings */
+    text-align: center;
+    /* Center align headings */
 }
