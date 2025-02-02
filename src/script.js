@@ -14,8 +14,7 @@ function addNewStudent() {
     let ol = document.getElementById('studentlist');
     let node = ol.firstChild.nextSibling;
     while (node) {
-        if (node.textContent == studentName)
-        {
+        if (node.textContent == studentName) {
             alert(`Error: Student ${studentName} is already registered!`)
             return;
         }
@@ -32,6 +31,7 @@ function addNewStudent() {
     radioButton.onclick = function () { checkCheckBoxesForThisStudent(studentName) };
     radioButton.value = studentName
     newNode.value = studentName
+    newNode.id = studentName + "id"
     recycleBinImage.value = studentName
     recycleBinImage.type = "image"
     recycleBinImage.src = ".././resources/recycle-bin.png";
@@ -51,12 +51,10 @@ function checkCheckBoxesForThisStudent(studentName) {
     let node = ol.firstChild.nextSibling;
     while (node) {
         if (node.tagName === 'LI') {
-            if (courses.has(node.textContent))
-            {
+            if (courses.has(node.textContent)) {
                 node.firstChild.checked = true;
             }
-            else
-            {
+            else {
                 node.firstChild.checked = false;
             }
         }
@@ -80,8 +78,7 @@ function addNewCourse() {
     let ol = document.getElementById('courselist');
     let node = ol.firstChild.nextSibling;
     while (node) {
-        if (node.textContent == courseName)
-        {
+        if (node.textContent == courseName) {
             alert(`Error: Course ${courseName} is already registered!`)
             return;
         }
@@ -95,7 +92,7 @@ function addNewCourse() {
     checkBox.type = "checkbox"
     checkBox.value = courseName
     checkBox.id = courseName
-    newNode.id = courseName+"id"
+    newNode.id = courseName + "id"
     checkBox.onclick = function () { addCourseInStudentList(courseName) };
     recycleBinImage.type = "image"
     recycleBinImage.src = ".././resources/recycle-bin.png";
@@ -109,15 +106,14 @@ function addNewCourse() {
     todolist.appendChild(newNode);
 }
 
-function addCourseInStudentList (courseName) {
+function addCourseInStudentList(courseName) {
     let studentName = null;
     let ol = document.getElementById('studentlist');
     let li = [];
     let node = ol.firstChild.nextSibling;
     while (node) {
         if (node.tagName === 'LI') {
-            if (node.firstChild.checked)
-            {
+            if (node.firstChild.checked) {
                 studentName = node.textContent
             }
             li.push(node);
@@ -126,13 +122,11 @@ function addCourseInStudentList (courseName) {
     }
 
     let isChecked = document.getElementById(courseName).checked;
-    if (isChecked && studentName != null)
-    {
+    if (isChecked && studentName != null) {
         let studentCourseList = studentsList[studentName]
         studentCourseList.add(courseName)
     }
-    else if (studentName != null)
-    {
+    else if (studentName != null) {
         studentsList[studentName].delete(courseName)
     }
 }
