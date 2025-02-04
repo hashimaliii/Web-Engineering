@@ -14,7 +14,8 @@ function addNewStudent() {
     let ol = document.getElementById('studentlist');
     let node = ol.firstChild.nextSibling;
     while (node) {
-        if (node.textContent == studentName) {
+        if (node.textContent == studentName)
+        {
             alert(`Error: Student ${studentName} is already registered!`)
             return;
         }
@@ -31,7 +32,6 @@ function addNewStudent() {
     radioButton.onclick = function () { checkCheckBoxesForThisStudent(studentName) };
     radioButton.value = studentName
     newNode.value = studentName
-    newNode.id = studentName + "id"
     recycleBinImage.value = studentName
     recycleBinImage.type = "image"
     recycleBinImage.src = ".././resources/recycle-bin.png";
@@ -51,10 +51,12 @@ function checkCheckBoxesForThisStudent(studentName) {
     let node = ol.firstChild.nextSibling;
     while (node) {
         if (node.tagName === 'LI') {
-            if (courses.has(node.textContent)) {
+            if (courses.has(node.textContent))
+            {
                 node.firstChild.checked = true;
             }
-            else {
+            else
+            {
                 node.firstChild.checked = false;
             }
         }
@@ -78,7 +80,8 @@ function addNewCourse() {
     let ol = document.getElementById('courselist');
     let node = ol.firstChild.nextSibling;
     while (node) {
-        if (node.textContent == courseName) {
+        if (node.textContent == courseName)
+        {
             alert(`Error: Course ${courseName} is already registered!`)
             return;
         }
@@ -92,7 +95,7 @@ function addNewCourse() {
     checkBox.type = "checkbox"
     checkBox.value = courseName
     checkBox.id = courseName
-    newNode.id = courseName + "id"
+    newNode.id = courseName+"id"
     checkBox.onclick = function () { addCourseInStudentList(courseName) };
     recycleBinImage.type = "image"
     recycleBinImage.src = ".././resources/recycle-bin.png";
@@ -106,14 +109,15 @@ function addNewCourse() {
     todolist.appendChild(newNode);
 }
 
-function addCourseInStudentList(courseName) {
+function addCourseInStudentList (courseName) {
     let studentName = null;
     let ol = document.getElementById('studentlist');
     let li = [];
     let node = ol.firstChild.nextSibling;
     while (node) {
         if (node.tagName === 'LI') {
-            if (node.firstChild.checked) {
+            if (node.firstChild.checked)
+            {
                 studentName = node.textContent
             }
             li.push(node);
@@ -122,11 +126,13 @@ function addCourseInStudentList(courseName) {
     }
 
     let isChecked = document.getElementById(courseName).checked;
-    if (isChecked && studentName != null) {
+    if (isChecked && studentName != null)
+    {
         let studentCourseList = studentsList[studentName]
         studentCourseList.add(courseName)
     }
-    else if (studentName != null) {
+    else if (studentName != null)
+    {
         studentsList[studentName].delete(courseName)
     }
 }
@@ -139,3 +145,68 @@ function deleteCourseElement(newNode) {
         value.delete(courseName)
     }
 }
+
+// function fun1() {
+//     console.log("I am involved");
+// }
+
+// fun1();
+
+let great = function(name) {
+    return `Welcome ${name}`;
+}
+
+function displayDuplicate(array){
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+    //     for (let index2 = 0; index2 < array.length; index2++) {
+    //         if (element == array[index2] && index != index2)
+    //         {
+    //             console.log(element)
+    //         }
+    //     }
+    // }
+
+    // newArray = array.reduce(((total,currentElement,index,array)=>(array.reduce(((total,currentElement,currentIndex)=>(currentElement == array[index] && currentIndex != index) ? total.push(currentElement) : total),[]))),[])
+    // console.log(newArray)
+
+    for (let index = 0; index < array.length; index++) {
+        let newArray = (array.reduce(((total,currentElement,currentIndex)=>(currentElement == array[index] && currentIndex != index) ? console.log(currentElement) : total),[]))
+        console.log(newArray)
+    }
+}
+
+function arrFunc(acc, x)
+{
+    console.log(acc)
+    console.log(x)
+    console.log(typeof(acc))
+    return acc.unshift(x)
+}
+
+
+let multiply = function (a, b) {
+    return a * b
+}
+let add = function (a, b) {
+    return a + b
+}
+let manipulator = function (val1, val2, func) {
+    return func(val1,val2)
+}
+
+// console.log(manipulator(1,2, add))
+
+function counter() {
+    let count = 0;
+    return function(){
+        return count++;
+    }
+}
+
+let increment = counter()
+
+function mul(...val) {
+    return val.reduce(((acc,value)=>acc*value), 1)
+}
+// Function Generators
